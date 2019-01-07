@@ -13,9 +13,12 @@
 import Vue from "vue";
 import MintUI from "mint-ui";
 Vue.use(MintUI);
+import "./sass/common.scss";
 import "mint-ui/lib/style.css";
-import { create } from 'domain';
+// import { create } from 'domain';
 // import { constants } from 'http2';
+import axios from 'axios';
+Vue.prototype.$axios = axios;
 
 export default {
     data(){
@@ -25,34 +28,34 @@ export default {
                     text: '首页',
                     icon: 'home',
                     path: '/home',
-                    name: 'Home'
+                    name: 'home'
                 },
                 {
                     text: '分类',
                     icon: 'category',
                     path: '/category',
-                    name: 'Category'
+                    name: 'category'
                 },
                 {
                     text: '问药',
                     icon: 'message',
                     path: '/message',
-                    name: 'Message'
+                    name: 'message'
                 },
                 {
                     text: '清单',
                     icon: 'cart',
                     path: '/cart',
-                    name: 'Cart'
+                    name: 'cart'
                 },
                 {
                     text: '我的',
                     icon: 'mine',
                     path: '/mine',
-                    name: 'Mine'
+                    name: 'mine'
                 }
             ],
-            selected:'Home'
+            selected:'home'
         }
     },
     methods:{
@@ -60,7 +63,9 @@ export default {
             this.selected=this.tabs[idx].name
             // console.log(this.selected)
             this.$router.push({path});
-            console.log(this.$router.history.current.name)
+            let name=this.$router.history.current.path
+            // console.log(name.indexOf('category'))
+            // console.log(this.$router.history.current.path)
         }
     },
     computed:{
@@ -83,16 +88,34 @@ export default {
     watch:{
         //监听路由变化 根据路由改变数据中selected
         $route(newvalue,oldvalue){
-            this.selected=newvalue.name
+            let name=newvalue.path.substring(1,newvalue.path.length)
+
+            //console.log(123,name.substring(0,name.indexOf('/')))
+            if(name.indexOf('/')!=-1){
+                this.selected=name.substring(0,name.indexOf('/'))
+            }else{
+                this.selected=name
+                console.log(name)
+            }
         }
     },
     mounted(){
-        console.log(this.$route)
-        this.selected=this.$route.name
+        // console.log(this.$route.path)
+        // this.selected=this.$route.name
+        let name=this.$route.path.substring(1,this.$route.path.length)
+
+            //console.log(123,name.substring(0,name.indexOf('/')))
+        if(name.indexOf('/')!=-1){
+            this.selected=name.substring(0,name.indexOf('/'))
+        }else{
+            this.selected=name
+            console.log(name)
+        }
     }
 }
 </script>
 <style lang="scss">
+
     .mint-tab-item{
         img{
             width: 38px;
