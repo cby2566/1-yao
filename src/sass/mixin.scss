@@ -1,0 +1,5 @@
+//相关的混合操作
+
+@function sss($n){
+    @return $n / 32 * 1rem;
+}

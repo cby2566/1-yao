@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-view/>
-        <mt-tabbar :selected.sync="selected" fixed="true">
+        <mt-tabbar :selected.sync="selected" :fixed="true">
             <mt-tab-item :id="tab.text" v-for="(tab,idx) in tabs" :key="idx" @click.native="goto(tab.path,idx)">
                 <img slot="icon" :src="[selected===tab.name?`../assets/img/${tab.icon}now.png`:`../assets/img/${tab.icon}.png`]">
                 {{tab.text}}
