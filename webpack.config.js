@@ -25,6 +25,14 @@ module.exports = {
         contentBase:'./src/',
         port:1809,
         // open:true
+        proxy:{
+            '/111api':{
+                target:"http://router.111yao.com",//代理目标服务器
+                changeOrigin: true,
+                pathRewrite: {'^/111api' : ''}, //替换部分路径
+            }
+        },
+        host:'0.0.0.0',//localhost,127.0.0.1,ip地址都可以访问
     },
 
     resolve:{
