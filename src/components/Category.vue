@@ -1,17 +1,17 @@
 <template>
     <div>
-        <mt-search placeholder="药品、品牌或症状"></mt-search>
+        <mt-search placeholder="药品、品牌或症状"  ></mt-search>
         <div class="box">
 
         <mt-navbar v-model="selected">
             <mt-tab-item :id="tab.pid" v-for="tab in catelist" :key="tab.name" >{{tab.name}}</mt-tab-item>
         </mt-navbar>
         </div>
-        <!-- <div class="wrapper" ref="wrapper">
+        <div class="wrapper" ref="wrapper">
             <ul class="content">
                 <li ref="li2" v-for="tab in catelist" :key="tab.name">{{tab}}</li>
             </ul>
-        </div> -->
+        </div>
         <!-- <router-view/> -->
     </div>
 </template>
@@ -42,14 +42,15 @@ export default {
     //   }
     },
     mounted(){
-        let name=this.$route.path.substring(1,this.$route.path.length)
+        // let name=this.$route.path.substring(1,this.$route.path.length)
         
-        console.log(name.substring(name.indexOf('/')+1,name.length))
-        this.selected=name.substring(name.indexOf('/')+1,name.length)
+        // console.log(name.substring(name.indexOf('/')+1,name.length))
+        // this.selected=name.substring(name.indexOf('/')+1,name.length)
     }
 }
 </script>
 <style lang="scss">
+
 .box{
     overflow: auto;
     height: 52px;
