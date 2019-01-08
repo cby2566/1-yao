@@ -18,40 +18,40 @@ const routes=[
     {name:'Category',
     path:'/category',
     component: Category,
-    children:[
-        {
-          path:'',//默认子路由
-          redirect:{name:'Crowd'}
-        },
-        {
-          path:'857',//当url为/list/in_theaters匹配这个子路由
-          name:'Crowd',
-          component:Crowd,
-          meta:{
-              requireAuth:true
-          }
-        },
-        {
-          path:'1039',
-          name:'Family',
-          component:Family
-        },
-        {
-          path:'1076',
-          name:'Instrument',
-          component:Instrument
-        },
-        {
-          path:'1137',
-          name:'Health',
-          component:Health
-        },
-        {
-          path:'1163',
-          name:'Herb',
-          component:Herb
-        }
-      ]
+    // children:[
+    //     {
+    //       path:'',//默认子路由
+    //       redirect:{name:'Crowd'}
+    //     },
+    //     {
+    //       path:'857',//当url为/list/in_theaters匹配这个子路由
+    //       name:'Crowd',
+    //       component:Crowd,
+    //       meta:{
+    //           requireAuth:true
+    //       }
+    //     },
+    //     {
+    //       path:'1039',
+    //       name:'Family',
+    //       component:Family
+    //     },
+    //     {
+    //       path:'1076',
+    //       name:'Instrument',
+    //       component:Instrument
+    //     },
+    //     {
+    //       path:'1137',
+    //       name:'Health',
+    //       component:Health
+    //     },
+    //     {
+    //       path:'1163',
+    //       name:'Herb',
+    //       component:Herb
+    //     }
+    //   ]
     },
     {name:'Message',path:'/message',component: Message},
     {name:'Cart',path:'/cart',component: Cart}, 

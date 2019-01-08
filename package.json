@@ -38,6 +38,7 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
+    "better-scroll": "^1.13.4",
     "mint-ui": "^2.2.13",
     "octicons": "^8.2.0",
     "vuex": "^3.0.1"

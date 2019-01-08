@@ -4,10 +4,15 @@
         <div class="box">
 
         <mt-navbar v-model="selected">
-            <mt-tab-item :id="tab.pid" v-for="tab in catelist" :key="tab.name" @click.native="goto(tab.pid)">{{tab.name}}</mt-tab-item>
+            <mt-tab-item :id="tab.pid" v-for="tab in catelist" :key="tab.name" >{{tab.name}}</mt-tab-item>
         </mt-navbar>
         </div>
-        <router-view/>
+        <!-- <div class="wrapper" ref="wrapper">
+            <ul class="content">
+                <li ref="li2" v-for="tab in catelist" :key="tab.name">{{tab}}</li>
+            </ul>
+        </div> -->
+        <!-- <router-view/> -->
     </div>
 </template>
 <script>
@@ -32,9 +37,9 @@ export default {
     'category' //把this.cart映射为this.$store.state.cart
     ]),
     methods:{
-        goto(name){
-        this.$router.push({path:'/category/'+name})
-      }
+    //     goto(name){
+    //     this.$router.push({path:'/category/'+name})
+    //   }
     },
     mounted(){
         let name=this.$route.path.substring(1,this.$route.path.length)
