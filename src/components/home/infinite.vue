@@ -52,10 +52,9 @@ export default {
     }
 }
 </script>
-<style>
+<style >
     .link_shop{
-
-        width:97%;
+        width:98%;
         height:100px;
         background:url(../../assets/img/songhuo.png) no-repeat;
         background-size: 100%;
