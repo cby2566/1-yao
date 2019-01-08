@@ -1,6 +1,6 @@
 <template>
-    <div>
-        Home
+    <div class="home1">
+        <inf />
     </div>
 </template>
 <script>
@@ -9,7 +9,18 @@
 // export let Home = Vue.component('Home',{
 
 // });
+import inf from './home/infinite.vue';
 export default {
-
+    data(){
+        return {name:123}
+    },
+    components:{
+        inf
+    }
 }
 </script>
+<style>
+.home1{
+    
+}
+</style>

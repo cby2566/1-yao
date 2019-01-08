@@ -1,0 +1,85 @@
+{
+    "statusCode": "1",
+    "hotgoodslist": [
+        {
+            "hot_title": "热销商品",
+            "price": 26.9,
+            "goodsno": "0301035",
+            "abbreviation_picture": "/static/image/goods//201811/fbeca05db2a7fe264aed1f28d9694f91.jpg",
+            "goods_id": 3151,
+            "short_name": "同仁堂 五子衍宗丸"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 29,
+            "goodsno": "0113132",
+            "abbreviation_picture": "/static/image/goods//201811/247caf491b68cf4dffb3c74d8ce94ec7.jpg",
+            "goods_id": 7531,
+            "short_name": "格华止 盐酸二甲双胍片"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 33.9,
+            "goodsno": "0314196",
+            "abbreviation_picture": "/static/image/goods//201812/f4752706eb2b5dfc0edb0f2a412c4f34.jpg",
+            "goods_id": 5850,
+            "short_name": "同仁堂 右归丸"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 15,
+            "goodsno": "0405007",
+            "abbreviation_picture": "/static/image/goods//201812/7dc1450dbe9cf79a06be8fad901bbac5.jpg",
+            "goods_id": 1305,
+            "short_name": "999  三九胃泰颗粒"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 14.3,
+            "goodsno": "0405036",
+            "abbreviation_picture": "/static/image/goods//201811/d26ae79527eae1f29fa602bcd8c52d7b.jpg",
+            "goods_id": 5583,
+            "short_name": "北华 枸橼酸钾颗粒"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 49.8,
+            "goodsno": "0604114",
+            "abbreviation_picture": "/static/image/goods//201812/cd69a463e4acc36c28e5f334e2e19fa7.jpg",
+            "goods_id": 73,
+            "short_name": "京都念慈庵 蜜炼川贝枇杷膏"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 15,
+            "goodsno": "0402003",
+            "abbreviation_picture": "/static/image/goods//201811/9dbdeb0a345668bcd12f516b7c6fff04.jpg",
+            "goods_id": 1304,
+            "short_name": "999 感冒灵颗粒"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 25,
+            "goodsno": "0314041",
+            "abbreviation_picture": "/static/image/goods//201811/1543f84d29b1595c3ca2993f903e31d1.jpg",
+            "goods_id": 3605,
+            "short_name": "同仁堂 锁阳固精丸"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 22,
+            "goodsno": "0308008",
+            "abbreviation_picture": "/static/image/goods//201812/7df55f075d5331c8e29efd90c684431d.jpg",
+            "goods_id": 3565,
+            "short_name": "广誉远 定坤丹"
+        },
+        {
+            "hot_title": "热销商品",
+            "price": 38.3,
+            "goodsno": "0414029",
+            "abbreviation_picture": "/static/image/goods//201901/ae2fe52c5df58ec2e85e785aaa3f01ce.jpg",
+            "goods_id": 5291,
+            "short_name": "鲁南 参芪降糖颗粒"
+        }
+    ]
+}

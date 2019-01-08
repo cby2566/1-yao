@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="appede">
         <router-view/>
-        <mt-tabbar :selected.sync="selected">
+        <mt-tabbar :selected.sync="selected" fixed>
             <mt-tab-item :id="tab.text" v-for="(tab,idx) in tabs" :key="idx" @click.native="goto(tab.path,idx)">
                 <img slot="icon" :src="[selected===tab.name?`../assets/img/${tab.icon}now.png`:`../assets/img/${tab.icon}.png`]">
                 {{tab.text}}
@@ -102,5 +102,8 @@ export default {
         .mint-tab-item-label{
             color: #4d4e58;
         }
+    }
+    .appede{
+        height:100%;
     }
 </style>
