@@ -36,9 +36,12 @@ export default {
 }
 
 </script>
-<style>
+
+<style lang="scss">
+@import '../../sass/mixin.scss';
 .lun{
-    height: 140px;
+    margin-top:sss($n:80);
+    height:sss($n :97);
 }
 .tutu{
     background:url(../../assets/img/lun1.jpg) no-repeat;
