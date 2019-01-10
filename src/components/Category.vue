@@ -29,7 +29,7 @@
                         </div>
                         <ul class="goodslist">
                             <li v-for="good in list.plist" :key="good.pid">
-                                <a href="">{{good.name}}</a>
+                                <a :href="good.pid">{{good.name}}</a>
                             </li>
                         </ul>
                     </div>

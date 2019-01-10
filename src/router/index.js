@@ -4,11 +4,7 @@ Vue.use(VueRouter);
 
 import Home from '@com/Home.vue';
 import Category from '@com/Category.vue';
-    import Crowd from '@com/Crowd.vue';
-    import Family from '@com/Family.vue';
-    import Instrument from '@com/Instrument.vue';
-    import Health from '@com/Health.vue';
-    import Herb from '@com/Herb.vue';
+   
 import Message from '@com/Message.vue';
 import Cart from '@com/Cart.vue';
 import Mine from '@com/Mine.vue';
