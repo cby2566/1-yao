@@ -1,27 +1,18 @@
 <template>
     <div>
-        <mt-header title="" fixed>
+        <mt-header title="" fixed class="seachss">
           <router-link to="/" slot="left">
             <mt-button ><a>{{text}}</a></mt-button>
+            </br>
+            <mt-button ><div class="serser"><div @click="seach"></div></div></mt-button>
           </router-link>
         </mt-header>
-        <div @click="seach()">
-            <mt-search v-model="text" class="dl dl2" ></mt-search>
-        </div>
-        <mt-popup
-          v-model="popupVisible"
-          class="ttttt"
-          position="right"
-          
-          >
-        <mt-search v-model="text" placeholder="搜索" cancel-text="取消" class="dl2"></mt-search>
-        <button @click="closes()">取消</button>
-        </mt-popup>
+       
     </div>
 </template>
 <script>
 import Vue from 'vue';
-import { Header,Popup,Search } from 'mint-ui';
+import { Header,Search } from 'mint-ui';
 
 
 Vue.component(Header.name, Header);
@@ -33,41 +24,32 @@ export default {
     methods:{
         seach(){
             this.popupVisible=true;
+            console.log(123456,this.popupVisible)
+            this.$emit('view_ser',this.popupVisible);
         },
         closes(){
             console.log(123)
                  
-            this.popupVisible=false;
+            //this.popupVisible=false;
         }
     }
 }
 
 </script>
-<style>
-a{
-    color:red;
+<style lang="scss">
+
+@import '../../sass/mixin.scss';
+
+.seachss{
+    height:sss($n : 80);
 }
-.dl{
-padding-top:39px;
-}
-.dl2{
-    height:52px;
-}
-.mint-searchbar{
-    background-color: #26a2ff;
-}
-.div1{
-    height: 400px;
-    width: 400px;
-    background:red;
-}
-.ttttt{
-    height: 100%;
-    width:100%;
-    background:#999;
-}
-.mint-search-list{
-    position: relative;
+.serser{
+   div{
+    height:sss($n : 33);
+    width:sss($n : 304);
+    background:url(../../assets/img/ser.png) no-repeat;
+    background-size: 100%;
+   }
 }
 
 </style>
