@@ -29,7 +29,7 @@
                         </div>
                         <ul class="goodslist">
                             <li v-for="good in list.plist" :key="good.pid">
-                                <a :href="good.pid">{{good.name}}</a>
+                                <a href="javascript:;" @click="tolist(good.pid)">{{good.name}}</a>
                             </li>
                         </ul>
                     </div>
@@ -105,15 +105,15 @@ export default {
         },
         //获取右侧每个模块的高度
         height() {
-        let wrap2 = this.$refs.li2;
-        console.log(this.$refs.li2);
-        let height = 0;
-        this.listHeight.push(height);
-        for (let i = 0; i < wrap2.length; i++) {
-            let item = wrap2[i];
-            height += item.clientHeight;
+            let wrap2 = this.$refs.li2;
+            console.log(this.$refs.li2);
+            let height = 0;
             this.listHeight.push(height);
-        }
+            for (let i = 0; i < wrap2.length; i++) {
+                let item = wrap2[i];
+                height += item.clientHeight;
+                this.listHeight.push(height);
+            }
         // console.log(this.listHeight);
         },
          //  点击左侧滚动
@@ -145,6 +145,10 @@ export default {
             console.log(wrap1[index].$el)
             this.navwrapScroll.scrollToElement(el, 300, -100, 0); //往上偏移100
         },
+        tolist(pid){
+            // this.$router.push({path:'details',query:{id:123}})
+            console.log(pid)
+        }
     },
     created() {
         this.$nextTick(() => {
