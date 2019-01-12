@@ -57,7 +57,7 @@ export default {
     height:97%;
     background-size: 100%;
     margin: 0 auto;
-    margin-top: 5px;
-    border-radius: 10px;
+    margin-top:sss($n:5);
+    border-radius: sss($n:10);
 }
 </style>
