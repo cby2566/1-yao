@@ -2,7 +2,7 @@
     <div class="heng1">
       <div class="slide-box">
 
-        <hot_item  v-for="(v,i) in itemData" :imgurl="'../../assets/img/hot'+i+'.jpg'" :itemName="v['short_name']" :price="v['price']" />
+        <hot_item :key="i" v-for="(v,i) in itemData" :imgurl="'../../assets/img/hot'+i+'.jpg'" :itemName="v['short_name']" :price="v['price']" />
         
       </div>
     </div>

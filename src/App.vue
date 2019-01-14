@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-view/>
-        <mt-tabbar :selected.sync="selected" :fixed="true" v-if="$store.state.home.showNav">
+        <mt-tabbar :selected="selected" :fixed="true" v-if="$store.state.home.showNav">
             <mt-tab-item :id="tab.text" v-for="(tab,idx) in tabs" :key="idx" @click.native="goto(tab.path,idx)">
                 <img slot="icon" :src="[selected===tab.name?`../assets/img/${tab.icon}now.png`:`../assets/img/${tab.icon}.png`]">
                 {{tab.text}}
@@ -15,6 +15,8 @@ import MintUI from "mint-ui";
 Vue.use(MintUI);
 import "./sass/common.scss";
 import "mint-ui/lib/style.css";
+
+
 // import { create } from 'domain';
 // import { constants } from 'http2';
 import axios from 'axios';
@@ -96,6 +98,9 @@ export default {
                 console.log(name)
             }
         }
+    },
+    created(){
+        this.$store.state.home.showNav = true;
     },
     mounted(){
         // console.log(this.$route.path)
