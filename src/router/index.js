@@ -7,11 +7,9 @@ import Category from '@com/Category.vue';
 import Message from '@com/Message.vue';
 import Cart from '@com/Cart.vue';
 import Mine from '@com/Mine.vue';
-<<<<<<< HEAD
-import itemx from '@com/item/itemx.vue'
-=======
+
 import Goodlist from '@com/goodlist/Goodlist.vue'
->>>>>>> cxw
+
 const routes=[
     {name:'Home',path:'/home',component: Home},
     {path:'/',redirect:{name:'Home'}},
