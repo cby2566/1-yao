@@ -5,7 +5,7 @@
         <p :class="active=='tab-container2'?'opm':''" @click="gettab('tab-container2')">说明书</p>
         <p :class="active=='tab-container3'?'opm':''" @click="gettab('tab-container3')">评论（0）</p>
     </div>
-    <mt-tab-container v-model="active" :swipeable='true'>
+    <mt-tab-container v-model="active" :swipeable='true' class="item_tabs_x">
       <mt-tab-container-item id="tab-container1">
         <mt-cell class="item_shuo">
             <img src="../../assets/img/shum1.jpg" />
@@ -50,6 +50,7 @@ export default {
 .item_tabs{
     .item_tabs_h{
         display:flex;
+        
         p{
             height: sss($n :28);
             line-height: sss($n :28);
@@ -70,5 +71,12 @@ export default {
         }
     }
 }
+.item_tabs_x{
+    position:static;
+    a{
+       position:static;
+    }
+}
+
 
 </style>

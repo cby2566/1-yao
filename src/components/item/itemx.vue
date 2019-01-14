@@ -4,9 +4,27 @@
             <div></div>
             <div></div>
         </div>
+        <div class="item_bottm">
+            <div>
+                <img src="../../assets/img/zdzx.png" />
+                <a>咨询</a>
+            </div>
+            <div>
+                <img src="../../assets/img/zdzx2.png" />
+                <a>咨询</a>
+            </div>
+            <div>
+                <img src="../../assets/img/zdzx3.png" />
+                <a>咨询</a>
+            </div>
+            <div>加入清单</div>
+            <div>立即购买</div>
+        </div>
 
         <div class="item_cont">
-            <div class="itemx_img"></div>
+            <div class="itemx_img">
+                <img src="../../assets/img/shum1.jpg" />
+            </div>
             <div class="item_tit">
                 <a>康美尚 四季感冒片（薄膜衣片） 0.5g*48片</a>
                 <span class="_otc">OTC</span>
@@ -49,6 +67,8 @@ import tabs from './item_tabs.vue';
 
 import { TabContainer, TabContainerItem } from 'mint-ui';
 import Vue from 'vue';
+
+
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 
@@ -71,7 +91,8 @@ export default {
         tabs
     },
     created() {
-        console.log(111)
+        this.$store.commit('deNav',false);
+        console.log('ff',this.$store.state.home);
     }
 }
 </script>
@@ -103,6 +124,54 @@ export default {
         height: sss($n : 40);
     }
 }
+.item_bottm{
+    position: fixed;
+    width:sss($n : 320);
+    height: sss($n : 49);
+    bottom:0;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    :nth-child(1),:nth-child(2),:nth-child(3){
+        position:relative;
+        top:sss($n :4);
+        width:sss($n : 42);
+        height: sss($n : 49);
+        font-size: sss($n : 10);
+        text-align: center;
+        z-index: 999;
+        a{
+            display:block;
+            color: #222;
+        }
+        img{
+            width:sss($n :21);
+            height: sss($n : 19);
+        }
+    }
+    :nth-child(4),:nth-child(5){
+        position:relative;
+        margin-top:sss($n : -5);
+        width:sss($n : 80);
+        height: sss($n : 49);
+        line-height:sss($n : 49);
+        background: #FFE4DD;
+        color: #FE4310;
+        font-size:sss($n :14);
+        text-align: center;
+        top:sss($n :4);
+    }
+    :nth-child(5){
+        background: #FE4310;
+        color:#FFE4DD;
+    }
+    :nth-child(4){
+        left:sss($n :5);
+
+    }
+}
+
+
 .item_cont{
     width:sss($n : 320);
     box-sizing:border-box;
@@ -111,7 +180,10 @@ export default {
     padding-right:sss($n : 14) ;
     .itemx_img{
         height: sss($n : 280);
-        background:red;
+        img{
+           height: sss($n : 280);
+           width:100%; 
+        }
     }
     .item_tit{
         margin-bottom: sss($n :20);
