@@ -51,6 +51,7 @@ export default {
       this._initScroll();
       this.height();
     });
+    this.$store.state.home.showNav = true;
   },
   mounted() {},
   methods: {

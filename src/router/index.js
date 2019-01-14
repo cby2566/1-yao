@@ -8,7 +8,7 @@ import Message from '@com/Message.vue';
 import Cart from '@com/Cart.vue';
 import Mine from '@com/Mine.vue';
 import Goodlist from '@com/goodlist/Goodlist.vue'
-import Login from '@com/login/Login.vue'
+import Login from '@com/Sign/Login1.vue'
 import itemx from '@com/item/itemx.vue'
 const routes=[
     {name:'Home',path:'/home',component: Home},

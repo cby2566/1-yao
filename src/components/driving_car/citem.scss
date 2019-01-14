@@ -1,0 +1,42 @@
+@import '../../sass/mixin.scss';
+.citem{
+    height: sss($n : 123);
+    display:flex;
+    justify-content:space-between;
+    padding:sss($n :15);
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    :nth-child(1){
+        img{
+            height: sss($n : 25);
+            width:sss($n : 25);
+        }
+    }
+    :nth-child(2){
+        img{
+            height:sss($n : 77);
+            width:sss($n : 77);
+        }
+    }
+    :nth-child(3){
+        p{
+            color: #222;
+            font-size:sss($n : 12);
+            width:sss($n : 160);
+            margin:0;
+        }
+        :nth-child(1){
+            margin-top:sss($n :-20);
+        }
+        :nth-child(2){
+            margin-top:sss($n :10);
+        }
+        :nth-child(3){
+            margin-top:sss($n :10);
+            color: #fe4310;
+            font-size: sss($n :15);
+            font-weight: bold;
+        }
+    }
+}
