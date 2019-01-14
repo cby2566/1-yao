@@ -1,5 +1,6 @@
 export default {
     state:{
+      showNav:true
   },
   getters:{
 

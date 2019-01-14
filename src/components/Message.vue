@@ -142,6 +142,9 @@ export default {
   },
  
   computed: {
+  },
+  mounted(){
+    console.log('message')
   }
 };
 </script>
