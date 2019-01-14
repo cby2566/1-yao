@@ -1,12 +1,13 @@
 <template>
     <div>
-        Cart
+        login
     </div>
 </template>
 <script>
 export default {
-    created(){
-        console.log('created')
-    }
+    
 }
 </script>
+<style>
+
+</style>

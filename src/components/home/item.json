@@ -1,0 +1,110 @@
+{
+    "statusCode": "1",
+    "list": [
+        {
+            "id": 4322,
+            "w": 46,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/2cb179b3c6a2af370222758fe4e74d87xx2.jpg",
+            "price": "",
+            "weight": "46",
+            "html5url": "",
+            "name": "感冒",
+            "goods": [],
+            "aid": "175",
+            "type": "6",
+            "price_url": ""
+        },
+        {
+            "id": 4306,
+            "w": 45,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/d6bf08c302f088b325220ff4bc6210b0xx2.jpg",
+            "price": "",
+            "weight": "45",
+            "html5url": "",
+            "name": "消化不良",
+            "goods": [],
+            "aid": "113",
+            "type": "6",
+            "price_url": ""
+        },
+        {
+            "id": 4308,
+            "w": 45,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/57551dea9ea990f444256567041e0a6axx2.jpg",
+            "price": "",
+            "weight": "45",
+            "html5url": "",
+            "name": "便秘",
+            "goods": [],
+            "aid": "110",
+            "type": "6",
+            "price_url": ""
+        },
+        {
+            "id": 4302,
+            "w": 44,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/542a33e94499cba6dcf3b6cd7ee06aa6xx2.jpg",
+            "price": "",
+            "weight": "44",
+            "html5url": "",
+            "name": "痔疮",
+            "goods": [],
+            "aid": "109",
+            "type": "6",
+            "price_url": ""
+        },
+        {
+            "id": 4319,
+            "w": 44,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/d61dcb804a6de7d50e7d49ebeaca8c99xx2.jpg",
+            "price": "",
+            "weight": "44",
+            "html5url": "",
+            "name": "口腔溃疡",
+            "goods": [],
+            "aid": "154",
+            "type": "6",
+            "price_url": ""
+        },
+        {
+            "id": 4304,
+            "w": 43,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/9cd7e65005f5ba355cf7d2e62bf6a250xx2.jpg",
+            "price": "",
+            "weight": "43",
+            "html5url": "",
+            "name": "胃炎",
+            "goods": [],
+            "aid": "105",
+            "type": "6",
+            "price_url": ""
+        },
+        {
+            "id": 4318,
+            "w": 42,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/27c92380309ef05896c1645d760976c8xx2.jpg",
+            "price": "",
+            "weight": "42",
+            "html5url": "",
+            "name": "结膜炎",
+            "goods": [],
+            "aid": "135",
+            "type": "6",
+            "price_url": ""
+        },
+        {
+            "id": 4291,
+            "w": 41,
+            "imgUrl": "http://img.zdfei.com/static/image/temp/20181107/d0e56fb3ede14cde518943f7f7064221xx2.jpg",
+            "price": "",
+            "weight": "41",
+            "html5url": "",
+            "name": "荨麻疹",
+            "goods": [],
+            "aid": "131",
+            "type": "6",
+            "price_url": ""
+        }
+    ],
+    "moreurl": "2"
+}
