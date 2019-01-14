@@ -2,7 +2,7 @@
     <div>
        <mt-swipe :auto="4000" class="lun" @change="handleChange">
           <mt-swipe-item v-for="item in tu" :key="item">
-            <div :class="['tut',tutu(item)]">{{item}}</div>
+            <div :class="['tut',tutu(item)]"></div>
           </mt-swipe-item>
         </mt-swipe>
         

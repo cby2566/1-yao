@@ -25,7 +25,7 @@ export default {
     //   })
     // }
     getgoodlist(context,playload){
-      axios.get('/111api/sltRouter',{
+      axios.get('http://router.111yao.com/sltRouter',{
         params:{
             cId:playload.cId,
             method:'getCategoryGoodsByOtoFirst',

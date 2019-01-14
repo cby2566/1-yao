@@ -16,6 +16,9 @@ export default {
 
 components:{
         jia_jian
+    },
+    created(){
+        this.$store.state.home.showNav = true;
     }
 }
 </script>

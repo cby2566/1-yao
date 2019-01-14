@@ -11,7 +11,7 @@
                     <li :class="item.name" v-for="item in data" :key="item.name"> <a :class="[item.name==cover? 'cover':'']" @click="changecover(item.name)">{{item.text}}</a></li>
                 </ul>
             </h2>
-            <a href="/"><span class="serachbtn"></span></a>
+            <a href="/home"><span class="serachbtn"></span></a>
         </header>
         <div class="phoneContent">
             <article class="login_head">
@@ -57,9 +57,10 @@
                 <img src="../../assets/img/ortherway.png" alt="">
             </article>
         </div>
-        <footer>
+        <footer class="footer">
             <div class="footer-adv">
-                <img src="../../assets/img/wap-d.jpg" alt="">
+                <a href="javascript:;">立即下载</a>
+                <!-- <img src="../../assets/img/wap-d.jpg" alt=""> -->
             </div>
         </footer>
     </div>
@@ -310,6 +311,33 @@ header{
             width: sss($n : 30);
             vertical-align: middle;
             margin-right: sss($n : 10);
+        }
+    }
+}
+.footer{
+    text-align: center;
+    color: #3e3e3e;
+    padding: sss($n : 10) 0;
+    margin-top: sss($n : 10);
+    div{
+        width: 100%;
+        margin-bottom: sss($n : 10);
+        background: #477ce8 url(../../assets/img/wap-d.jpg) no-repeat top center;
+        height: sss($n : 55);
+        background-size: sss($n : 320);
+        a{
+            height: sss($n : 27);
+            line-height: sss($n : 27);
+            color: #fff;
+            padding: 0 sss($n : 15);
+            background: #ec6c1f;
+            display: inline-block;
+            text-align: center;
+            border-radius: sss($n : 4);
+            -webkit-border-radius: sss($n : 4);
+            float: right;
+            margin: sss($n : 14) sss($n : 10);
+            font-size: sss($n : 14);
         }
     }
 }
