@@ -20,7 +20,5 @@ export default {
 }
 </script>
 <style>
-.home1{
-    
-}
+
 </style>

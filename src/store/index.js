@@ -6,6 +6,7 @@ Vue.use(Vuex);
 // import cart from './cart';
 import category from './category.js';
 import home from './home.js'
+import goodlist from './goodlist.js'
 
 // vuex的使用
 // 1.创建一个store
@@ -14,6 +15,7 @@ export default new Vuex.Store({
   modules:{
     // cart,
     category,
-    home
+    home,
+    goodlist
   }
 });

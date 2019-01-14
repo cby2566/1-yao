@@ -21,7 +21,7 @@
           infinite-scroll-distance="15"
             class="rexiao_item_list"
           >
-          <li v-for="i in list">
+          <li v-for="i in list" :key="i">
               <div class="rexiao_item" :style="'background:url(../../assets/img/home_item'+i+'.jpg) no-repeat;background-size: 100%;'"></div>
           </li>
         </ul>

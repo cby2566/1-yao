@@ -146,7 +146,7 @@ export default {
             this.navwrapScroll.scrollToElement(el, 300, -100, 0); //往上偏移100
         },
         tolist(pid){
-            // this.$router.push({path:'details',query:{id:123}})
+            this.$router.push({path:'/goodlist',query:{cid:pid}})
             console.log(pid)
         }
     },
@@ -156,6 +156,7 @@ export default {
             this._initScroll();
             this.height();
         });
+        this.$store.state.home.showNav = true;
     }
     
 }
