@@ -19,7 +19,7 @@ Vue.component(Header.name, Header);
 Vue.component(Search.name, Search);
 export default {
     data(){
-        return {text:'abc',popupVisible:false}
+        return {text:'送至 龙洞街道福民路33号',popupVisible:false}
     },
     methods:{
         seach(){
