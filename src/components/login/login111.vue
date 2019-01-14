@@ -1,11 +1,13 @@
 <template>
     <div>
         login
-    </div>
+    </div>    
 </template>
 <script>
 export default {
-    
+    created(){
+        this.$store.state.home.showNav = false;
+    }
 }
 </script>
 <style>
