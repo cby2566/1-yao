@@ -9,6 +9,7 @@ import Cart from '@com/Cart.vue';
 import Mine from '@com/Mine.vue';
 import Goodlist from '@com/goodlist/Goodlist.vue'
 import Login from '@com/login/Login.vue'
+import itemx from '@com/item/itemx.vue'
 const routes=[
     {name:'Home',path:'/home',component: Home},
     {path:'/',redirect:{name:'Home'}},
@@ -32,7 +33,8 @@ const routes=[
     {name:'Mine',path:'/mine',component: Mine,meta:{
         requireAuth:true
     }},
-    {name:'Login',path:'/login',component: Login}
+    {name:'Login',path:'/login',component: Login},
+    {name:'itemx',path:'/itemx',component: itemx}
 ]
 
 let router = new VueRouter({
