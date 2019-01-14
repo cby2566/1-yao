@@ -1,0 +1,102 @@
+@import '../sass/mixin.scss';
+.Cart{
+    font-size: sss($n :12);
+    .cart_herd{
+        position: fixed;
+        top:0;
+        height:sss($n :44);
+        width:sss($n :320);
+        background:white;
+        display:flex;
+        justify-content:space-between;
+        overflow: hidden;
+        div{
+            height:sss($n :44);
+        }
+        :nth-child(1){
+            background:url(../assets/img/item_top1.png) no-repeat center center;
+            background-size: 50%;
+            width:sss($n :35);
+            
+        }
+        :nth-child(2){
+            line-height:sss($n :44);
+            color: #252323;
+            font-size: sss($n :15);
+            font-weight: bold;
+        }
+        :nth-child(3){
+            line-height:sss($n :44);
+            padding-right: sss($n :10);
+        }
+    }
+
+    .cart_link{
+        height:sss($n :55);
+        width:100%;
+        margin-top:sss($n :44);
+        display:flex;
+        justify-content:space-between;
+        font-size: sss($n :14);
+        background: #F8F8F8;
+        border-bottom: 5px solid #EFEFEF;
+        div{
+            height:sss($n :55);
+
+        }
+        :nth-child(1){
+            background:url(../assets/img/car_home.png) no-repeat center center;
+            background-size: 50%;
+            width:sss($n :35);
+        }
+        :nth-child(2){
+            color:#222;
+            line-height: sss($n :55);
+        }
+        :nth-child(3){
+            color:#fe4310;
+            line-height: sss($n :55);
+            padding-right: sss($n :10);
+        }
+
+    }
+
+    .cart_mai{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:sss($n :320);
+        height:sss($n :50);
+        div:nth-child(1){
+            img{
+                width:sss($n :25);
+                height:sss($n :25);
+                display:inline-block;
+                position:relative;
+                top:sss($n :7);
+            }
+            span{
+                display:inline-block;
+                line-height:sss($n :50);
+            }
+        }
+        div:nth-child(2){
+            display:flex;
+            flex-direction:column;
+            span{
+
+            }
+        }
+        div:nth-child(3){
+                margin-right: sss($n :6);
+                background-color: #fe4310;
+                color: #fff;
+                font-size: sss($n : 15);
+                height:sss($n :50);
+                line-height:sss($n :50);
+                width:sss($n :100);
+                text-align: center;
+        }
+    }
+
+}
