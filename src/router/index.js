@@ -7,9 +7,8 @@ import Category from '@com/Category.vue';
 import Message from '@com/Message.vue';
 import Cart from '@com/Cart.vue';
 import Mine from '@com/Mine.vue';
-
+import itemx from '@com/item/itemx.vue'
 import Goodlist from '@com/goodlist/Goodlist.vue'
-
 const routes=[
     {name:'Home',path:'/home',component: Home},
     {path:'/',redirect:{name:'Home'}},
@@ -29,8 +28,9 @@ const routes=[
     },
     {name:'Message',path:'/message',component: Message},
     {name:'Cart',path:'/cart',component: Cart}, 
+    {name:'Mine',path:'/mine',component: Mine},
+    {name:'itemx',path:'/itemx',component: itemx},
     {name:'Goodlist',path:'/goodlist',component: Goodlist}, 
-    {name:'Mine',path:'/mine',component: Mine}
 ]
 
 let router = new VueRouter({
