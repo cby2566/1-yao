@@ -7,8 +7,9 @@ import Category from '@com/Category.vue';
 import Message from '@com/Message.vue';
 import Cart from '@com/Cart.vue';
 import Mine from '@com/Mine.vue';
-import itemx from '@com/item/itemx.vue'
 import Goodlist from '@com/goodlist/Goodlist.vue'
+import Login from '@com/login/Login.vue'
+import itemx from '@com/item/itemx.vue'
 const routes=[
     {name:'Home',path:'/home',component: Home},
     {path:'/',redirect:{name:'Home'}},
@@ -28,13 +29,33 @@ const routes=[
     },
     {name:'Message',path:'/message',component: Message},
     {name:'Cart',path:'/cart',component: Cart}, 
-    {name:'Mine',path:'/mine',component: Mine},
-    {name:'itemx',path:'/itemx',component: itemx},
     {name:'Goodlist',path:'/goodlist',component: Goodlist}, 
+    {name:'Mine',path:'/mine',component: Mine,meta:{
+        requireAuth:true
+    }},
+    {name:'Login',path:'/login',component: Login},
+    {name:'itemx',path:'/itemx',component: itemx}
 ]
 
 let router = new VueRouter({
     routes
 });
-
+// 全局路由守卫
+// 在进入某个路由前执行的代码
+router.beforeEach((to,from,next)=>{
+    if(to.meta.requireAuth){
+      // 判断是否登录
+      if(sessionStorage.getItem('token')){
+        // if(router.app.$store.state.token){
+            next();
+        }else{
+            next({
+                path:'/login'
+            })
+        }
+    }else{
+      // 要进入to路由，必须调用next()方法
+        next();
+    }
+  });
 export default router
