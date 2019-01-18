@@ -14,7 +14,7 @@ import hot_item from './hot_item.vue';
 
 import hot from './hot.json'
 
-console.log(hot);
+//console.log(hot);
      
      
 Vue.use(InfiniteScroll);

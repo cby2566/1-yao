@@ -22,22 +22,25 @@
         </div>
 
         <div class="item_cont">
-            <div class="itemx_img">
-                <img src="../../assets/img/shum1.jpg" />
-            </div>
+        <mt-swipe :auto="4000">
+          <mt-swipe-item v-for="(item,idx) in goodsImages" :key="idx"><img class="itemx_img" :src="'http://img.zdfei.com'+item.images" /></mt-swipe-item>
+        </mt-swipe>
+
+                
+
             <div class="item_tit">
-                <a>康美尚 四季感冒片（薄膜衣片） 0.5g*48片</a>
+                <a>{{goods_name}}</a>
                 <span class="_otc">OTC</span>
             </div>
             <div class="item_more">
                 <div>功效</div>
-                <div>清热解表。用于四季风...</div>
+                <div>{{main_title}}</div>
                 <div><img src="../../assets/img/item_dian.png" />
                 </div>
             </div>
             <div class="item_more">
                 <div>规格</div>
-                <div>0.5g * 48片</div>
+                <div>{{spec}}</div>
                 <div><img src="../../assets/img/item_dian.png" />
                 </div>
             </div>
@@ -53,7 +56,7 @@
         <tabs></tabs>
 
         <h1 class="item_qing" @click="qing">{{itemto}}</h1>
-        <h1 class="item_qing" @click="qing">123</h1>
+        <h1 class="item_qing" @click="qing">{{y}}</h1>
         
 
     </div>
@@ -65,34 +68,73 @@ import aja from './ajax.js';
 import inf2 from '../home/infinite2.vue';
 import tabs from './item_tabs.vue';
 
-import { TabContainer, TabContainerItem } from 'mint-ui';
+import { TabContainer, TabContainerItem , Indicator} from 'mint-ui';
 import Vue from 'vue';
 
 
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
-
+//cnpm i ee-first -D
+let idxx=function(arg) {
+   return arg
+}
 export default {
     data(){
-        return {itemto:123,active:'777'}
+        return {itemto:123,active:'777',
+            goods_name:'',
+            main_title:'',
+            manu_name:'',
+            spec:'',
+            price:'',
+            img:'http://img.zdfei.com'+'/',
+            goodsImages:[{images:'/static/image/goods//201806/2959db314456b18a9e5f7dd199b95f67.jpg'}],
+            sid:0
+        }
     },
     methods:{
-        qing(){
-            aja['p'].then(function(res){
-                console.log(res);
+        qing(qid){ 
+            Indicator.open();
+            aja['p'](qid).then((res)=>{
+                let data=JSON.parse(res);
+                let {goods_name,main_title,manu_name,spec,id}=data.goods;
+
+                let {price}=data.goodsPrice;
+
+                this.goods_name=goods_name;
+                this.main_title=main_title;
+                this.manu_name=manu_name;
+                this.spec=spec;
+                this.price=price;
+                this.goodsImages=data.goodsImages;
+                this.sid=id;
+                Indicator.close();
             });
         },
         tabs1(ok){
             console.log(ok);  
         }
     },
+    computed:{
+        ...idxx({
+        y:function(){
+            return {x:1,y1:2,d:3}
+        },
+        arr:function(){
+            return [7,8,9,0]
+        }
+    })
+    },
     components:{
         inf2,
         tabs
     },
     created() {
+        
         this.$store.commit('deNav',false);
-        console.log('ff',this.$store.state.home);
+        //console.log('ff',this.$store.state.home);
+    },
+    mounted(){
+        this.qing(75);
     }
 }
 </script>
@@ -109,6 +151,7 @@ export default {
     height: sss($n : 40);
     background:white;
     top:0;
+    z-index: 7;
     :nth-child(2){
         float:left;
         background:url(../../assets/img/item_top1.png) no-repeat center center;
@@ -180,10 +223,11 @@ export default {
     padding-right:sss($n : 14) ;
     .itemx_img{
         height: sss($n : 280);
-        img{
-           height: sss($n : 280);
-           width:100%; 
-        }
+        width:100%; 
+        display:block;
+    }
+    .mint-swipe{
+        height: sss($n : 280);
     }
     .item_tit{
         margin-bottom: sss($n :20);

@@ -10,10 +10,8 @@
             <div>111医药馆商城 1日后到家</div>
             <div>满99元免运费</div>
         </div>
-        <citem />
-        <citem />
-        <citem />
-        <citem />
+        <citem v-for="i in citems" />
+
         <div class="cart_mai">
             <div>
                 <img src="../assets/img/citem1.png"/>
@@ -31,6 +29,9 @@
 <script>
 import citem from './driving_car/cart_item.vue';
 export default {
+    data(){
+        return {citems:5}
+    },
     created(){
 
     },

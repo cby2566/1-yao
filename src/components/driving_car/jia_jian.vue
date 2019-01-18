@@ -1,15 +1,33 @@
 <template>
     <div class="jia_jian">
-    <div></div>
-    <div><input value='1'/></div>
-    <div></div>
+    <div @click="jianx"></div>
+    <div><input :value='num'/></div>
+    <div @click="jiax"></div>
     </div>
 </template>
 <script>
 
 export default {
-
-
+    data(){
+        return {num:1}
+    },
+     watch:{
+    num(newNum,old){
+        console.log(newNum,old)       
+    }
+    },
+    methods:{
+        jiax(){
+            this.num+=1;
+            this.$emit('jiax',this.num);
+        },
+        jianx(){
+            if(this.num != 1){
+               this.num-=1; 
+            }
+            this.$emit('jianx',this.num);
+        }
+    }
 }
 </script>
 

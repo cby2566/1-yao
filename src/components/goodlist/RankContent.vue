@@ -44,8 +44,8 @@ export default {
         })
     },
     mounted(){
-        console.log(this.$store.state.goodlist)
-        console.log('this.goodlist:',this.goodlist)
+        //console.log(this.$store.state.goodlist)
+        //console.log('this.goodlist:',this.goodlist)
     }
 }
 </script>

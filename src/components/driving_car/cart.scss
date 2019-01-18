@@ -6,10 +6,11 @@
         top:0;
         height:sss($n :44);
         width:sss($n :320);
-        background:white;
+        background: white;
         display:flex;
         justify-content:space-between;
         overflow: hidden;
+        z-index: 7;
         div{
             height:sss($n :44);
         }
