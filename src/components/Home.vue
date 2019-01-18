@@ -16,6 +16,9 @@ export default {
     },
     components:{
         inf
+    },
+    created(){
+        this.$store.state.home.showNav = true;
     }
 }
 </script>
