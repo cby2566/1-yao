@@ -115,6 +115,7 @@ export default {
         }
     },
     computed:{
+        //写个点点点的例子
         ...idxx({
         y:function(){
             return {x:1,y1:2,d:3}

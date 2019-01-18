@@ -1,8 +1,8 @@
 <template>
     <div class="jia_jian">
-    <div @click="jianx"></div>
+    <div @click.stop="jianx"></div>
     <div><input :value='num'/></div>
-    <div @click="jiax"></div>
+    <div @click.stop="jiax"></div>
     </div>
 </template>
 <script>
@@ -13,7 +13,7 @@ export default {
     },
      watch:{
     num(newNum,old){
-        console.log(newNum,old)       
+        //console.log(newNum,old)       
     }
     },
     methods:{

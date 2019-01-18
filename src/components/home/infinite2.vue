@@ -2,7 +2,7 @@
     <div class="heng1">
       <div class="slide-box">
 
-        <hot_item :key="i" v-for="(v,i) in itemData" :imgurl="'../../assets/img/hot'+i+'.jpg'" :itemName="v['short_name']" :price="v['price']" />
+        <hot_item :key="i" v-for="(v,i) in itemData" :imgurl="simg(i)" :itemName="v['short_name']" :price="v['price']" />
         
       </div>
     </div>
@@ -25,7 +25,11 @@ export default {
     methods:{
         loadMore() {
           
-        }},
+        },
+        simg(idm){
+            return require('../../assets/img/hot'+idm+'.jpg');
+        }
+    },
     components:{
         hot_item
     }

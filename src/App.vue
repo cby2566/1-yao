@@ -3,7 +3,8 @@
         <router-view/>
         <mt-tabbar :selected="selected" :fixed="true" v-if="$store.state.home.showNav">
             <mt-tab-item :id="tab.text" v-for="(tab,idx) in tabs" :key="idx" @click.native="goto(tab.path,idx)">
-                <img slot="icon" :src="[selected===tab.name?`../assets/img/${tab.icon}now.png`:`../assets/img/${tab.icon}.png`]">
+                 <img slot="icon" :src="selected===tab.name?bian(tab.icon,false):bian(tab.icon,true)">
+                <!-- <img slot="icon" :src=bian(123,true)> -->
                 {{tab.text}}
             </mt-tab-item>
         </mt-tabbar>
@@ -57,6 +58,7 @@ export default {
                 }
             ],
             selected:'home'
+            ,img:require('./assets/img/home.png')
         }
     },
     methods:{
@@ -67,6 +69,13 @@ export default {
             let name=this.$router.history.current.path
             // console.log(name.indexOf('category'))
             // console.log(this.$router.history.current.path)
+        },
+        bian(idx,flag){
+            if(flag){
+                return require(`./assets/img/${idx}.png`);
+            }else{
+                return require(`./assets/img/${idx}now.png`);
+            }
         }
     },
     computed:{

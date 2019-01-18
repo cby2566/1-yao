@@ -14,7 +14,7 @@
           <div class="tou_rf"><span>小心了！做这些事情，你会招惹到“大姨妈”！</span></div>
         </div>
         <h2 class="rexiao">健康照顾方案</h2>
-        
+
         <ul
           v-infinite-scroll="loadMore"
           infinite-scroll-disabled="loading"
@@ -22,7 +22,7 @@
             class="rexiao_item_list"
           >
           <li v-for="i in list" :key="i">
-              <div class="rexiao_item" :style="'background:url(../../assets/img/home_item'+i+'.jpg) no-repeat;background-size: 100%;'"></div>
+              <div class="rexiao_item" :style="'background:url('+simg(i)+') no-repeat;background-size: 100%;'"></div>
           </li>
         </ul>
     </div>
@@ -45,7 +45,7 @@ import porpe from './porp_ser.vue'
     
 export default {
     data(){
-        return {list:[0,1,2,3],popupVisible:false}
+        return {list:[0,1,2,3],popupVisible:false,a:require('../../assets/img/home_item1.jpg')}
     },
     methods:{
         loadMore() {
@@ -70,6 +70,9 @@ export default {
                
           this.popupVisible=pV;
           //Vue.$forceUpdate;
+        },
+        simg(i){
+          return require('../../assets/img/home_item'+i+'.jpg');
         }
         },
     components:{

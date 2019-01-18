@@ -22,7 +22,7 @@ module.exports = {
 
     // 测试服务器：安装
     devServer:{
-        contentBase:'./src/',
+        contentBase:'./dist/',
         port:1809,
         // open:true
         proxy:{
@@ -94,7 +94,7 @@ module.exports = {
                     loader:'url-loader',
                     options:{
                         // 设置转换base64编码的临界值
-                        limit:10000,
+                        limit:undefined,
                         name:'img/[name].[hash:7].[ext]',
                         // outputPath: './assets',
                         // publicPath: '/img'
