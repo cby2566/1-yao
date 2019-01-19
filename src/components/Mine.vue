@@ -36,7 +36,113 @@
                 </li>
             </ul>
         </div>
-        
+        <article class="member_art">
+            <div class="member_oder">
+                <span class="member_oder_title">我的订单</span>
+                <span class="member_oder_more">全部
+                    <img src="../assets/img/memberodermore.png" alt="">
+                </span>
+                <ul class="member_oder_ul">
+                    <li v-for="item in orderForm" :key="item.text">
+                        <a href="javascript:;">
+                            <div class="order-img-box"><img :src="'http://img.zdfei.com/static/image/htmls/single/2018-12-10/'+item.img" alt=""></div>
+                            {{item.text}}
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="member_line_box"></div>
+            <div class="member_swiper">
+                <span class="member_swiper_tit">健康档案</span>
+                <span class="member_oder_more">全部
+                    <img src="../assets/img/memberodermore.png" alt="">
+                </span>
+                <div class="swiper_box">
+                    <div class="swiper_wrapper">
+                        <div class="swiper_slide">
+                            <a href="javascript:;">
+                                <span class="slide_img"><img src="../assets/img/memberswiper1.png" alt=""></span>
+                                <span class="slide_span">步数</span>
+                                <span class="slide_span">-/-/-</span>
+                                <span class="slide_span">-/-</span>
+                            </a>
+                        </div>
+                        <div class="swiper_slide">
+                            <a href="javascript:;">
+                                <span class="slide_img"><img src="../assets/img/memberswiper2.png" alt=""></span>
+                                <span class="slide_span">血压</span>
+                                <span class="slide_span">-/-/-</span>
+                                <span class="slide_span">-/-</span>
+                            </a>
+                        </div>
+                        <div class="swiper_slide">
+                            <a href="javascript:;">
+                                <span class="slide_img"><img src="../assets/img/memberswiper3.png" alt=""></span>
+                                <span class="slide_span">血糖</span>
+                                <span class="slide_span">-/-/-</span>
+                                <span class="slide_span">-/-</span>
+                            </a>
+                        </div>
+                        <div class="swiper_slide">
+                            <a href="javascript:;">
+                                <span class="slide_img"><img src="../assets/img/memberswiper4.png" alt=""></span>
+                                <span class="slide_span">体重</span>
+                                <span class="slide_span">-/-/-</span>
+                                <span class="slide_span">-/-</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="member_line_box" style="margin-top: 25px"></div>
+            <div class="member_list">
+                <ul>
+                    <li>
+                        <a href="javascript:;">
+                            收货地址
+                            <span>
+                                <img src="../assets/img/memberodermore.png" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list_line"></li>
+                    <li>
+                        <a href="javascript:;">
+                            积分商城
+                            <span>
+                                <img src="../assets/img/memberodermore.png" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list_line"></li>
+                    <li>
+                        <a href="javascript:;">
+                            在线客服
+                            <span>
+                                <img src="../assets/img/memberodermore.png" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list_line"></li>
+                    <li>
+                        <a href="javascript:;">
+                            健康管家
+                            <span>
+                                4006063111
+                                <img src="../assets/img/memberodermore.png" alt="">
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list_line"></li>
+                </ul>
+            </div>
+            <div class="login_out">
+                <a href="javascript:;" @click="loginout">退出登录</a>
+            </div>
+        </article>
+        <a href="javascript:;" class="back_to_top"></a>
     </div>
 </template>
 <script>
@@ -72,6 +178,18 @@ export default {
             ]
 
         }
+    },
+    methods:{
+        // imgsrc(url){
+        //     return require('http://img.zdfei.com/static/image/htmls/single/2018-12-10/5c0de0b628ef4xx2'+url)
+        // }
+        loginout(){
+            window.sessionStorage.clear();
+            this.$router.push({path:'/home'});
+        }
+    },
+    created(){
+        this.$store.state.home.showNav = true;
     }
 }
 </script>
@@ -185,4 +303,188 @@ export default {
         }
     }
 }
+.member_art{
+    width: 92%;
+    margin: 0 auto;
+    font-family: SimHei,Helvetica,Arial,sans-serif;
+    padding-bottom: sss($n :120);
+    .member_oder{
+        background: #fff;
+        width: 100%;
+        .member_oder_title{
+            font-size: sss($n :16);
+            color: #4D4E58;
+            margin-top: sss($n :25);
+            margin-bottom: sss($n :25);
+            float: left;
+        }
+        .member_oder_more{
+            float: right;
+            margin-top: sss($n :27);
+            margin-bottom: sss($n :25);
+            font-size: sss($n :12);
+            img{
+                height: sss($n :10);
+                position: relative;
+                top: sss($n :1);
+            }
+        }
+        .member_oder_ul{
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            display: table;
+            li{
+                width: 25%;
+                float: left;
+                text-align: center;
+                font-size: sss($n :12);
+                color: #4D4E58;
+                margin-bottom: sss($n :20);
+                a{
+                    display: table;
+                    width: 100%;
+                    font-size: sss($n :12);
+                    color: #4D4E58;
+                    .order-img-box{
+                        display: block;
+                        width: 100%;
+                        img{
+                            width: sss($n :36);
+                            margin-bottom: sss($n :5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .member_line_box{
+        margin: 0 auto;
+        margin-top: sss($n :5);
+        border-top: sss($n :1) solid #DEE2F6;
+    }
+    .member_swiper{
+        width: 100%;
+        margin: 0 auto;
+        font-family: SimHei,Helvetica,Arial,sans-serif;
+        .member_swiper_tit{
+            font-size: 16px;
+            color: #4D4E58;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            float: left;
+        }
+        .member_oder_more{
+            float: right;
+            margin-top: sss($n :27);
+            margin-bottom: sss($n :25);
+            font-size: sss($n :12);
+            img{
+                height: sss($n :10);
+                position: relative;
+                top: sss($n :1);
+            }
+        }
+        .swiper_box{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: 0.3s all;
+            .swiper_wrapper{
+                overflow: auto;
+                transform: translate3d(0px, 0px, 0px); 
+            // padding: sss($n :10) 0;
+                transition-duration: 0ms;
+                display: flex;
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+                .swiper_slide{
+                    padding: sss($n :6);
+                    padding-right: 0;
+                    background-image: linear-gradient(90deg, #F0F6F6 1%, #E7F0EE 96%);
+                    border-radius: sss($n :4);
+                    height: 100%;
+                    position: relative;
+                    width: 25%;
+                    flex-shrink: 0;
+                    margin-right:5%; 
+                    transform: translate3d(0px, 0px, 0px);
+                    transition-duration: 0ms;
+                    a{
+                        color: #0d0d0d;
+                        display: table;
+                        width: 100%;
+                        .slide_img{
+                            img{
+                                width: sss($n :27);
+                                height: sss($n :27);
+                            }
+                            // padding: sss($n :10);
+                            padding-bottom: 0px;
+                        }
+                        .slide_span{
+                            font-size: sss($n :10);
+                            color: #4D4E58;
+                            line-height: sss($n :18);
+                            display: table;
+                            width: 100%;
+                            margin-top: sss($n :5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .member_list{
+        width: 100%;
+        margin: 0 auto;
+        ul{
+            width: 100%;
+            display: table;
+            li{
+                width: 100%;
+                font-family: SimHei,Helvetica,Arial,sans-serif;
+                display: table;
+                line-height: sss($n :60);
+                font-size: sss($n :16);
+                color: #4D4E58;
+                a{
+                    display: table;
+                    width: 100%;
+                    text-decoration: none;
+                    font-size: sss($n :16);
+                    color: #4D4E58;
+                    span{
+                        float: right;
+                        img{
+                            height: sss($n :10);
+                        }
+                    }
+                }
+                
+            }
+            .list_line{
+                border-top: 1px solid #DEE2F6;
+                content: '';
+            }
+        }
+    }
+    .login_out{
+        margin: sss($n :20) 0px 0px 0px;
+        a{
+            display: block;
+            height: sss($n :44);
+            line-height: sss($n :44);
+            text-align: center;
+            border-radius: sss($n :5);
+            background: #0fa9a3;
+            font-size: sss($n :15);
+            color: #FFF;
+            // background: linear-gradient(left,#5fe8ce 2%,#4da5ed);
+            background: -webkit-linear-gradient(left,#5fe8ce 2%,#4da5ed);
+        }
+    }
+}
+
 </style>
