@@ -37,7 +37,7 @@ export default {
     // },
     computed:{
         ...mapState({
-            // 映射this.goodslist为this.$store.state.cart.cartlist
+            // 映射this.goodslist为this.$store.state.goodlist.lists
             goodlist:(state)=>{
                 return state.goodlist.lists
             }
