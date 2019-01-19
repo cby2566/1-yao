@@ -8,9 +8,9 @@
         <div class="cart_link">
             <div></div>
             <div>111医药馆商城 1日后到家</div>
-            <div>满99元免运费</div>
+            <div @click="xyzwv">满99元免运费</div>
         </div>
-        <citem v-for="i in citems" />
+        <citem v-for="i in citems" :xyz="xyz"/>
 
         <div class="cart_mai">
             <div>
@@ -23,20 +23,25 @@
             </div>
             <div>结算（0）</div>
         </div>
-        <div class="bot_tai"> </div>
+        <div class="bot_tai"></div>
     </div>
 </template>
 <script>
 import citem from './driving_car/cart_item.vue';
 export default {
     data(){
-        return {citems:5}
+        return {citems:5,xyz:false}
     },
     created(){
 
     },
     components:{
         citem
+    },
+    methods:{
+        xyzwv(){
+            this.xyz=true;
+        }
     }
 }
 </script>

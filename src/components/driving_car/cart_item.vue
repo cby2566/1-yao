@@ -16,15 +16,18 @@ export default {
     data(){
         return {num:200,yimg:require('../../assets/img/citem1.png'),no_img:require('../../assets/img/citem2.png'),imgx:false}
         },
+    props:['xyz'],
     components:{
             jia_jian
         },
     computed:{
         img(){
-            if(this.imgx)
+            if(this.imgx){
                 return this.no_img;
-            else
+            }
+            else{
                 return this.yimg;
+            }
         },
         ko:{
             get(){
@@ -38,7 +41,7 @@ export default {
     },
     methods:{
         jiax(tou){
-            console.log(tou);      
+            console.log(tou);
         },
         jianx(tou){
             console.log(tou);
@@ -61,6 +64,7 @@ export default {
     created(){
         this.$store.state.home.showNav = true;
     }
+
 }
 </script>
 

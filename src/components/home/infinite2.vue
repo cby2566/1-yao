@@ -20,7 +20,7 @@ import hot from './hot.json'
 Vue.use(InfiniteScroll);
 export default {
     data(){
-        return {itemData:hot['hotgoodslist']}
+        return {itemData:hot['hotgoodslist'],good_id:hot['hotgoodslist'][0].goods_id}
     },
     methods:{
         loadMore() {

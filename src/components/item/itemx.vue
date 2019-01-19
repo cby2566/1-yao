@@ -1,5 +1,27 @@
 <template>
     <div class="itemx">
+    <mt-popup
+      v-model="popupVisible"
+      position="bottom" class="tanchu">
+      <div class="buy_buy">
+          <div>
+              <img :src="'http://img.zdfei.com'+goodsImages[0].images"/>
+              <div>
+                <span>￥{{price}}</span>
+                <span>已选 <a>{{spec}}</a></span> 
+              </div>
+          </div>
+            <div class="_sel_spc clearfix">
+                <strong class="_left_line"></strong>
+                <span class="_sel_text">规格</span>
+                <strong class="_right_line"></strong>
+            </div>
+      </div>
+      <div class="buy_buy2">
+          <span>取消</span>
+          <span>确定</span>
+      </div>
+    </mt-popup>
         <div class="item_top">
             <div></div>
             <div></div>
@@ -11,11 +33,11 @@
             </div>
             <div>
                 <img src="../../assets/img/zdzx2.png" />
-                <a>咨询</a>
+                <a>关注</a>
             </div>
             <div>
                 <img src="../../assets/img/zdzx3.png" />
-                <a>咨询</a>
+                <a>清单</a>
             </div>
             <div>加入清单</div>
             <div>立即购买</div>
@@ -32,6 +54,7 @@
                 <a>{{goods_name}}</a>
                 <span class="_otc">OTC</span>
             </div>
+            <p class="price">￥{{price}}</p>
             <div class="item_more">
                 <div>功效</div>
                 <div>{{main_title}}</div>
@@ -57,9 +80,8 @@
 
         <h1 class="item_qing" @click="qing">{{itemto}}</h1>
         <h1 class="item_qing" @click="qing">{{y}}</h1>
-        
-
     </div>
+
 </template>
 <script>
 
@@ -68,12 +90,14 @@ import aja from './ajax.js';
 import inf2 from '../home/infinite2.vue';
 import tabs from './item_tabs.vue';
 
-import { TabContainer, TabContainerItem , Indicator} from 'mint-ui';
+import { TabContainer, TabContainerItem , Indicator,Popup} from 'mint-ui';
 import Vue from 'vue';
 
 
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
+Vue.component(Popup.name, Popup);
+
 //cnpm i ee-first -D
 let idxx=function(arg) {
    return arg
@@ -88,7 +112,8 @@ export default {
             price:'',
             img:'http://img.zdfei.com'+'/',
             goodsImages:[{images:'/static/image/goods//201806/2959db314456b18a9e5f7dd199b95f67.jpg'}],
-            sid:0
+            sid:0,
+            popupVisible:true
         }
     },
     methods:{
@@ -142,6 +167,7 @@ export default {
 <style lang="scss">
 @import '../../sass/mixin.scss';
 @import './item.scss';
+@import './buy_buy.scss';
 .itemx{
     color:red;
     font-size:sss($n : 12);
@@ -176,6 +202,7 @@ export default {
     background:white;
     display:flex;
     justify-content:space-between;
+    z-index: 7;
     :nth-child(1),:nth-child(2),:nth-child(3){
         position:relative;
         top:sss($n :4);
@@ -226,6 +253,11 @@ export default {
         height: sss($n : 280);
         width:100%; 
         display:block;
+    }
+    .price{
+        font-weight: bold;
+        font-family: 'Arial';
+        font-size: sss($n :24);
     }
     .mint-swipe{
         height: sss($n : 280);
@@ -292,5 +324,15 @@ export default {
             text-align: center;
         }
     }
+}
+.tanchu{
+    
+}
+.buy_buy{
+    width:sss($n : 320);
+    height:sss($n :344);
+}
+.buy_buy2{
+    height:sss($n :51);
 }
 </style>

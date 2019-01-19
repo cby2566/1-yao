@@ -1,0 +1,53 @@
+@import '../../sass/mixin.scss';
+.buy_buy2{
+    border-top: #f8f8f8 sss($n :1) solid;
+    display:flex;
+    align-items:center;
+
+    span{
+        display:block;
+        flex:1;
+        text-align: center;
+    }
+    span:nth-child(2){
+        height:sss($n :51);
+        line-height: sss($n :51);
+        color: #fff;
+        background:#FE4310;
+    }
+}
+.buy_buy{
+    padding: sss($n :20) sss($n :13)  sss($n :0)  sss($n :13);
+    > div:nth-child(1){
+        display:flex;
+        padding-left: sss($n :40);
+        img{
+            height:sss($n :90);
+            border:sss($n :1) solid #f3f5f7;
+            border-radius: sss($n :5);
+        }
+        div{
+           span{
+                padding-left: sss($n :15);
+                display:block;
+            }
+            span:nth-child(1){
+                font-weight: bold;
+                color: #fe4310;
+                font-size: sss($n :18);
+            }
+            span:nth-child(2){
+                font-size: sss($n :14);
+                color: #999;
+            }
+            a{
+                padding-left: sss($n : 20);
+                color: #000;
+            }
+            
+        }
+    }
+    ._sel_spc{
+        border-top: #f8f8f8 0 solid;
+    }
+}

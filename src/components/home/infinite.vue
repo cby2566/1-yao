@@ -1,6 +1,6 @@
 <template>
     <div>
-        <porpe @getd="getdd" :datavw="popupVisible"/>
+
         <seach @view_ser="view_ser"/>
         <swipe/>
         <h2 class="rexiao">热销商品</h2>
@@ -161,29 +161,6 @@ export default {
   background-size: 100%;
   margin-left: sss($n : 10);
 }
-.v-modal{
-opacity:1;
 
-}
-.tanpop{
-  width:sss($n : 320);
-  height: sss($n :45);
-  display:flex;
-  flex-direction:row;
 
-  .tanpop_lf{
-    height: sss($n :45);
-    width: sss($n :45);
-    background: pink;
-  }
-  div:nth-child(2){
-    width: sss($n :225);
-    text-align: center;
-  }
-  .tanpop_rf{
-    height: sss($n :45);
-    width: sss($n :45);
-    background: pink;
-  } 
-}
 </style>
