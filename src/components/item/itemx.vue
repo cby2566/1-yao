@@ -16,6 +16,9 @@
                 <span class="_sel_text">规格</span>
                 <strong class="_right_line"></strong>
             </div>
+            <div><span class="guige"></span><p>{{spec}}</p></div>
+            <span class="close_x" @click="close_x"></span>
+            <jia_jian @jiax="jiax" @jianx="jianx" />
       </div>
       <div class="buy_buy2">
           <span>取消</span>
@@ -39,7 +42,7 @@
                 <img src="../../assets/img/zdzx3.png" />
                 <a>清单</a>
             </div>
-            <div>加入清单</div>
+            <div @click="buy_y">加入清单</div>
             <div>立即购买</div>
         </div>
 
@@ -78,8 +81,8 @@
         <inf2 />
         <tabs></tabs>
 
-        <h1 class="item_qing" @click="qing">{{itemto}}</h1>
-        <h1 class="item_qing" @click="qing">{{y}}</h1>
+        <h1 class="item_qing" @click="qing"> </h1>
+        <!-- <h1 class="item_qing" @click="qing">{{y }}</h1> -->
     </div>
 
 </template>
@@ -89,6 +92,7 @@ import aja from './ajax.js';
 //import './item.scss';
 import inf2 from '../home/infinite2.vue';
 import tabs from './item_tabs.vue';
+import jia_jian from '../driving_car/jia_jian.vue'
 
 import { TabContainer, TabContainerItem , Indicator,Popup} from 'mint-ui';
 import Vue from 'vue';
@@ -113,7 +117,8 @@ export default {
             img:'http://img.zdfei.com'+'/',
             goodsImages:[{images:'/static/image/goods//201806/2959db314456b18a9e5f7dd199b95f67.jpg'}],
             sid:0,
-            popupVisible:true
+            popupVisible:false,
+            buy_sum:1
         }
     },
     methods:{
@@ -135,8 +140,22 @@ export default {
                 Indicator.close();
             });
         },
+        buy_y(){
+            this.popupVisible=true
+        },
+        close_x(){
+            this.popupVisible=false
+        },
         tabs1(ok){
             console.log(ok);  
+        },
+        jiax(e){
+            console.log(e);
+            this.buy_sum=e;
+        },
+        jianx(e){
+            console.log(e);
+            this.buy_sum=e;
         }
     },
     computed:{
@@ -152,7 +171,8 @@ export default {
     },
     components:{
         inf2,
-        tabs
+        tabs,
+        jia_jian
     },
     created() {
         

@@ -18,6 +18,7 @@
 }
 .buy_buy{
     padding: sss($n :20) sss($n :13)  sss($n :0)  sss($n :13);
+    position:relative;
     > div:nth-child(1){
         display:flex;
         padding-left: sss($n :40);
@@ -49,5 +50,42 @@
     }
     ._sel_spc{
         border-top: #f8f8f8 0 solid;
+    }
+    .jia_jian{
+        top:sss($n : 80);
+    }
+    .guige{
+        display: block;
+        float: left;
+        width: sss($n : 15);
+        height: sss($n : 15);
+        background: url(http://img.zdfei.com/static/image/temp/20171017/bae900354646447054ee59e7fd3b27e4.png) no-repeat center center;
+        background-size: sss($n : 15);
+        margin: sss($n : 9) sss($n : 10) sss($n : 0) sss($n : 10);
+        position:relative;
+        top:sss($n : 12);
+    }
+    p{
+        border: sss($n : 1) solid #fe4310;
+        border-radius: sss($n : 2);
+        -webkit-border-radius: sss($n : 2);
+        -moz-border-radius: sss($n : 2);
+        -o-border-radius: sss($n : 2);
+        line-height: sss($n : 20);
+        padding: sss($n : 0) sss($n : 10);
+        color: #fe4310;
+        float: left;
+        padding-top: sss($n : 5);
+        padding-bottom: sss($n : 5);
+    }
+    .close_x{
+        display: block;
+        width: sss($n : 34);
+        height: sss($n : 34);
+        background: url(http://img.zdfei.com/static/image/temp/20170927/7d7f67405fb0e57c4721350557551124.png) no-repeat center center;
+        background-size: sss($n : 18) sss($n : 16);
+        position: absolute;
+        top:sss($n : 5);
+        right:sss($n :15);
     }
 }

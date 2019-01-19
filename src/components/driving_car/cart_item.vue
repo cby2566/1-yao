@@ -63,6 +63,7 @@ export default {
     },
     created(){
         this.$store.state.home.showNav = true;
+        
     }
 
 }
