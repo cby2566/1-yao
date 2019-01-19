@@ -92,13 +92,13 @@
                         <span>
                             帐号
                         </span>
-                        <input id="phonenum" type="tel" placeholder="手机号/昵称/邮箱">
+                        <input id="user" type="tel" placeholder="手机号/昵称/邮箱">
                     </li>
                     <li>
                         <span>
                             密码
                         </span>
-                        <input id="telcode" type="tel" placeholder="登录密码">
+                        <input id="psw" type="password" placeholder="登录密码">
                         
                     </li>
                 </ul>

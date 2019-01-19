@@ -71,11 +71,13 @@ export default {
                 for(let i=0 ;i<this.$slots.user[0].children[0].children.length;i++){
                     if(this.$slots.user[0].children[0].children[i].elm.nodeType!=3){
                         this.liChildren.push(this.$slots.user[0].children[0].children[i])
-                        
                     }
                 }
+                let user = this.liChildren[0].children[2].elm.value;
+                let psw = this.liChildren[1].children[2].elm.value;
+                window.sessionStorage.setItem('token', user);
             }
-
+            this.$router.push({path:'/home'})
             // console.log(this.$slots.phone[0].children[0].children)
             // console.log(this.$slots.phone[0])
             // console.log(this.liChildren)
