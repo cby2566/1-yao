@@ -5,9 +5,9 @@
                 <ul>
                     <li v-for="goods in goodlist[0]" :key="goods.pid">
                         <img class="goodsimg" :src="['http://img.zdfei.com'+goods.image]" alt="">
-                        <div class="goodsText">
+                        <div class="goodsText" @click="goto_itx(goods.pid)">
                             <p class="goodstit">
-                                <img :src="['../../assets/img/type'+goods.type+'.png']" alt="">
+                                <img src="../../assets/img/type1.png" alt="">
                                 <!-- <img :src="type(goods.type)" alt="" :ref="goods.type" > -->
                                 {{goods.name}}
                             </p>
@@ -42,6 +42,12 @@ export default {
                 return state.goodlist.lists
             }
         })
+    },
+    methods:{
+        goto_itx(sid){
+            //console.log(123,sid)
+            this.$router.push({path:'/itemx',query:{sid:sid}})
+        }
     },
     mounted(){
         //console.log(this.$store.state.goodlist)

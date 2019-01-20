@@ -8,13 +8,13 @@
     <mt-tab-container v-model="active" :swipeable='true' class="item_tabs_x">
       <mt-tab-container-item id="tab-container1">
         <mt-cell class="item_shuo">
-            <img src="../../assets/img/shum1.jpg" />
+            <img :src="'http://img.zdfei.com'+imgTab[0].images" />
         </mt-cell>
         <mt-cell class="item_shuo">
-            <img src="../../assets/img/shum1.jpg" />
+            <img :src="'http://img.zdfei.com'+imgTab[0].images" />
         </mt-cell>
         <mt-cell class="item_shuo">
-            <img src="../../assets/img/shum1.jpg" />
+            <img :src="'http://img.zdfei.com'+imgTab[0].images" />
         </mt-cell>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab-container2">
@@ -37,10 +37,13 @@ export default {
             active:'tab-container1'
         }
     },
+    props:['imgTab'],
     methods:{
         gettab(e){
             this.active=e;
         }
+    },
+    mounted(){       
     }
 
 }

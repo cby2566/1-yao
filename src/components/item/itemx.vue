@@ -22,12 +22,12 @@
       </div>
       <div class="buy_buy2">
           <span>取消</span>
-          <span>确定</span>
+          <span @click="make_card">确定</span>
       </div>
     </mt-popup>
         <div class="item_top">
-            <div></div>
-            <div></div>
+            <div ></div>
+            <div @click="go_back"></div>
         </div>
         <div class="item_bottm">
             <div>
@@ -40,7 +40,7 @@
             </div>
             <div>
                 <img src="../../assets/img/zdzx3.png" />
-                <a>清单</a>
+                <a @click="go_to_cart">清单</a>
             </div>
             <div @click="buy_y">加入清单</div>
             <div>立即购买</div>
@@ -60,7 +60,7 @@
             <p class="price">￥{{price}}</p>
             <div class="item_more">
                 <div>功效</div>
-                <div>{{main_title}}</div>
+                <div class="gonxiao">{{main_title}}</div>
                 <div><img src="../../assets/img/item_dian.png" />
                 </div>
             </div>
@@ -79,7 +79,7 @@
             <strong class="_right_line"></strong>
         </div>
         <inf2 />
-        <tabs></tabs>
+        <tabs :imgTab="goodsImages"></tabs>
 
         <h1 class="item_qing" @click="qing"> </h1>
         <!-- <h1 class="item_qing" @click="qing">{{y }}</h1> -->
@@ -94,7 +94,7 @@ import inf2 from '../home/infinite2.vue';
 import tabs from './item_tabs.vue';
 import jia_jian from '../driving_car/jia_jian.vue'
 
-import { TabContainer, TabContainerItem , Indicator,Popup} from 'mint-ui';
+import { TabContainer, TabContainerItem , Indicator,Popup,Toast } from 'mint-ui';
 import Vue from 'vue';
 
 
@@ -115,7 +115,7 @@ export default {
             spec:'',
             price:'',
             img:'http://img.zdfei.com'+'/',
-            goodsImages:[{images:'/static/image/goods//201806/2959db314456b18a9e5f7dd199b95f67.jpg'}],
+            goodsImages:[{images:'/static/image/htmls/single/2017-07-14/596879881feb2.jpg'}],
             sid:0,
             popupVisible:false,
             buy_sum:1
@@ -156,6 +156,40 @@ export default {
         jianx(e){
             console.log(e);
             this.buy_sum=e;
+        },
+        //加入购物车
+        make_card(){
+            let aItem={[this.sid]:
+                {sid:this.sid,
+                    checked:false,
+                    goodsImages:'http://img.zdfei.com'+this.goodsImages[0].images,
+                    price:this.price,
+                    spec:this.spec,
+                    main_title:this.main_title,
+                    manu_name:this.manu_name,
+                    sum:this.buy_sum,
+                    goods_name:this.goods_name}
+                };
+                this.$store.commit('addItem',aItem);
+                this.popupVisible=false;
+                Toast({
+                  message: '加入清单成功',
+                  position: 'bottom',
+                  duration: 1000,
+                  className:'toast'
+                });
+
+                //console.log('ok',this.$store.state.itemTo.cart);
+                     
+            // for(let i in aItem){
+            //     console.log(i,aItem[i])
+            // }   
+        },
+        go_back(){
+            this.$router.go(-1);
+        },
+        go_to_cart(){
+            this.$router.push({path:'/cart'})
         }
     },
     computed:{
@@ -175,12 +209,13 @@ export default {
         jia_jian
     },
     created() {
-        
+        //console.log(this.$router.history.current.query.sid)
+             
         this.$store.commit('deNav',false);
         //console.log('ff',this.$store.state.home);
     },
     mounted(){
-        this.qing(75);
+        this.qing(this.$router.history.current.query.sid);
     }
 }
 </script>
@@ -354,5 +389,16 @@ export default {
 }
 .buy_buy2{
     height:sss($n :51);
+}
+
+.gonxiao{
+    width:sss($n : 220);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.toast{
+    height:sss($n : 40);
+    z-index:99;
 }
 </style>

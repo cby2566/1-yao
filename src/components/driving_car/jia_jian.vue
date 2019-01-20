@@ -11,7 +11,8 @@ export default {
     data(){
         return {num:1}
     },
-     watch:{
+    props:['snum'],
+    watch:{
     num(newNum,old){
         //console.log(newNum,old)       
     }
@@ -26,6 +27,11 @@ export default {
                this.num-=1; 
             }
             this.$emit('jianx',this.num);
+        }
+    },
+    created(){
+        if(this.snum){
+            this.num=this.snum;
         }
     }
 }

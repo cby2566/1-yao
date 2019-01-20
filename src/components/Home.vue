@@ -19,6 +19,9 @@ export default {
     },
     created(){
         this.$store.state.home.showNav = true;
+        //console.log(this.$store.state.goodlist.lists);
+        //let cId=900;
+        //this.$store.dispatch('getgoodlist',{cId,pageNo:1});
     }
 }
 </script>
