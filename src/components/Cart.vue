@@ -74,7 +74,8 @@ export default {
         quanx(){
             this.imgx=!this.imgx;
             for(let i in this.$store.state.itemTo.cart){
-                vue.set(this.$store.state.itemTo.cart[i],'checked',this.imgx);
+                //vue.set(this.$store.state.itemTo.cart[i],'checked',this.imgx);
+                this.$store.commit('updataObj',[i,this.imgx]);
             }
             console.log(this.$store.state.itemTo.cart);
                  
@@ -95,7 +96,7 @@ export default {
             console.log(this.itemObject);
             //this.itemObject.shift();
             //delete this.itemObject[e];
-            vue.delete(this.itemObject, e)
+            vue.delete(this.itemObject, e);
             //this.$store.commit('deleteObj',e);
             console.log(this.itemObject)
         }

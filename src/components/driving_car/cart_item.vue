@@ -52,9 +52,12 @@ export default {
             this.itmObj.sum=tou;
         },
         buy(e){
-            this.imgx=!this.imgx; 
-            vue.set(this.itmObj,'checked',this.imgx);
-
+            this.imgx=!this.imgx;
+            this.$store.commit('updataObj',[this.itmObj.sid,this.imgx]);
+            //vue.set(this.itmObj,'checked',this.imgx);
+            //this.itmObj.checked=this.imgx;
+            //console.log(this.itmObj.checked);  
+            //vue.set(this.itmObj,'checked',this.imgx);
             //console.log(this.itmObj.checked,this.itmObj);
             //console.log(this.$store.state.itemTo.cart);
                  

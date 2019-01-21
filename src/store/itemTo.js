@@ -24,6 +24,10 @@ export default {
     deleteObj(state,itm){
       delete state.cart[itm];
       //console.log(state.cart);
+    },
+    updataObj(state,itm){
+        console.log(itm[0],itm[1]);
+        state.cart[itm[0]].checked=itm[1];
     }
 
   },

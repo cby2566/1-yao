@@ -1,0 +1,66 @@
+@import '../sass/mixin.scss';
+.consult{
+    display: flex;
+    font-size: sss($n :14);
+    flex-direction:column;
+    width: sss($n :320);
+    position: relative;
+    .xhead{
+        height: sss($n :50);
+        background: rgb(0, 204, 205);
+        display: flex;
+        align-items:center;
+        padding-left: sss($n :12);
+        padding-right: sss($n :12);
+        img{
+            height: sss($n :32);
+            width: sss($n :32);
+        }
+        p{
+            color: #fff;
+            margin-left: sss($n :12);
+        }
+        span{
+            position:absolute;
+            right:sss($n :12);
+            display:block;
+            height: sss($n :20);
+            width: sss($n :20);
+            color: #FFF;
+        }
+    }
+    .conter{
+        background:#f7f7f7;
+        height:sss($n :388);
+    }
+    .xMessage{
+        .toor_bar{
+            height: sss($n :24);
+            border-top: sss($n :1) solid #ddd;
+            display:flex;
+            background:url(../assets/img/icoma.png) no-repeat;
+        }
+        textarea{
+            height:sss($n :70);
+            width:sss($n :315);
+            border:0;
+        }
+    }
+    .xbottom{
+        display:flex;
+        height:sss($n :30);
+        justify-content:flex-end;
+        span{
+            display:block;
+            height:sss($n :28);
+            width:sss($n :58);
+            color:#fff;
+            background:rgb(0, 204, 205);
+            text-align: center;
+            line-height:sss($n :28);
+            border-radius: sss($n :7);
+            margin-bottom: sss($n :5);
+            margin-right: sss($n :5);
+        }
+    }
+}

@@ -45,6 +45,7 @@
             <div @click="buy_y">加入清单</div>
             <div>立即购买</div>
         </div>
+        <span class="cart_fx2">{{Object.keys(this.$store.state.itemTo.cart).length}}</span>
 
         <div class="item_cont">
         <mt-swipe :auto="4000">
@@ -82,7 +83,7 @@
         <tabs :imgTab="goodsImages"></tabs>
 
         <h1 class="item_qing" @click="qing"> </h1>
-        <!-- <h1 class="item_qing" @click="qing">{{y }}</h1> -->
+        <!-- <h1 class="item_qing" @click="qing">{{y}}</h1> -->
     </div>
 
 </template>
@@ -400,5 +401,19 @@ export default {
 .toast{
     height:sss($n : 40);
     z-index:99;
+}
+.cart_fx2{
+    position:fixed;
+    bottom:sss($n : 35);
+    right:sss($n : 166);
+    font-size:sss($n :12);
+    display:block;
+    min-width:sss($n :20);
+    height:sss($n :18);
+    background:#ff4100;
+    border-radius:sss($n :7);
+    color: #fff;
+    z-index: 8;
+    text-align: center;
 }
 </style>

@@ -2,6 +2,7 @@
     <div>
         <router-view/>
         <mt-tabbar :selected="selected" :fixed="true" v-if="$store.state.home.showNav">
+        <span class="cart_fx">{{Object.keys(this.$store.state.itemTo.cart).length}}</span>
             <mt-tab-item :id="tab.text" v-for="(tab,idx) in tabs" :key="idx" @click.native="goto(tab.path,idx)">
                  <img slot="icon" :src="selected===tab.name?bian(tab.icon,false):bian(tab.icon,true)">
                 <!-- <img slot="icon" :src=bian(123,true)> -->
@@ -59,6 +60,7 @@ export default {
             ],
             selected:'home'
             ,img:require('./assets/img/home.png')
+            
         }
     },
     methods:{
@@ -126,6 +128,8 @@ export default {
 }
 </script>
 <style lang="scss">
+
+    @import './sass/mixin.scss';
     .mint-tab-item{
         img{
             width: 38px;
@@ -135,5 +139,17 @@ export default {
         .mint-tab-item-label{
             color: #4d4e58;
         }
+    }
+    .cart_fx{
+        position:fixed;
+        bottom:sss($n : 40);
+        right:sss($n : 70);
+        font-size:sss($n :12);
+        display:block;
+        width:sss($n :25);
+        height:sss($n :18);
+        background:#ff4100;
+        border-radius:sss($n :7);
+        color: #fff;
     }
 </style>
