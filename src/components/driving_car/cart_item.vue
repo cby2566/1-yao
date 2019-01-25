@@ -1,12 +1,12 @@
 <template>
-    <div class="citem" @click="buy(num)">
+    <div class="citem" @click="buy()">
         <div><img :src="img"/></div>
         <div><img :src="itmObj.goodsImages"/></div>
         <div>
             <p>{{itmObj.goods_name}}</p>
             <p>{{itmObj.spec}}</p>
             <p>${{itmObj.price}}</p>
-            <a @click="deleteObj" :class="sca">删除</a>
+            <a @click.stop="deleteObj" :class="sca">删除</a>
         </div>
         <jia_jian @jiax="jiax" @jianx="jianx" :snum="itmObj.sum" />
     </div>
@@ -25,10 +25,10 @@ export default {
         },
     computed:{
         img(){
-            if(this.imgx){
+            if(this.itmObj.checked){     
                 return this.no_img;
             }
-            else{
+            else{   
                 return this.yimg;
             }
         },
@@ -40,6 +40,14 @@ export default {
                 console.log(e)    
             }
             
+        },
+        img_what(){
+           if(this.itmObj.checked){
+                return 'imgxx';
+            }
+            else{
+                return 'imgxy';
+            } 
         }
     },
     methods:{
@@ -51,9 +59,13 @@ export default {
             console.log(tou);
             this.itmObj.sum=tou;
         },
-        buy(e){
+        buy(){
+            this.$emit('up_img',[this.itmObj.sid,this.itmObj.checked]);
+            
             this.imgx=!this.imgx;
-            this.$store.commit('updataObj',[this.itmObj.sid,this.imgx]);
+
+                 
+            //this.$store.commit('updataObj',[this.itmObj.sid,this.imgx]);
             //vue.set(this.itmObj,'checked',this.imgx);
             //this.itmObj.checked=this.imgx;
             //console.log(this.itmObj.checked);  
@@ -91,6 +103,10 @@ export default {
     },
     mounted(){
        // console.log(this.itmObj)
+    },
+    beforeUpdate(){
+        console.log('更新')
+             
     }
 
 }

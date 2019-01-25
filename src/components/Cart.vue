@@ -10,7 +10,7 @@
             <div>111医药馆商城 1日后到家</div>
             <div @click="xyzwv">满99元免运费</div>
         </div>
-        <citem v-for="(v,i) in itemObject" :xyz="xyz"  :key="i" :itmObj="v" :sca="shanchu" @Doobj="Dobj"/>
+        <citem v-for="(v,i) in itemObject" :xyz="xyz"  :key="i" :itmObj="v" :sca="shanchu" @Doobj="Dobj" @up_img="up_img"/>
 
         <div class="cart_mai">
             <div>
@@ -31,16 +31,18 @@ import citem from './driving_car/cart_item.vue';
 import vue from 'Vue'
 export default {
     data(){
-        return {citems:5,xyz:false,yimg:require('../assets/img/citem1.png'),no_img:require('../assets/img/citem2.png'),imgx:false,shanchu:'shanchu',isDelete:true,itemObject:this.$store.state.itemTo.cart,obj:{xx:123,ss:999}}
+        return {citems:5,xyz:false,yimg:require('../assets/img/citem1.png'),no_img:require('../assets/img/citem2.png'),imgx:false,shanchu:'shanchu',isDelete:true,
+        //itemObject:this.$store.state.itemTo.cart,
+        obj:{xx:123,ss:999}}
     },
     created(){
         //this.$store.commit('buga','ds');
         //this.$store.dispatch('minusPriceAsync','dsd');
     },
     computed:{
-        /*itemObject(){
+        itemObject(){
             return this.$store.state.itemTo.cart;
-        },*/
+        },
         sum(){    
             for(let i in this.$store.state.itemTo.cart){
                 console.log(this.$store.state.itemTo.cart[i].checked)
@@ -99,7 +101,18 @@ export default {
             vue.delete(this.itemObject, e);
             //this.$store.commit('deleteObj',e);
             console.log(this.itemObject)
+        },
+        up_img(eb){
+            console.log('父组件，当前',eb);
+            
+            //vue.set(this.itemObject[eb[0]],'checked',!eb[1]);
+            eb[1]=!eb[1];
+            this.$store.commit('updataObj',eb);
         }
+    },
+    beforeUpdate () {
+        console.log('mounted:',this.itemObject)
+             
     }
 }
 </script>

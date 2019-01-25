@@ -1,6 +1,7 @@
 export default {
     state:{
-      cart:{}
+      cart:{
+      }
   },
   getters:{
 
@@ -27,7 +28,14 @@ export default {
     },
     updataObj(state,itm){
         console.log(itm[0],itm[1]);
-        state.cart[itm[0]].checked=itm[1];
+        // state.cart[itm[0]].checked=itm[1];
+        // 扩展对象使深层对象也变成响应式
+        state.cart = {
+          ...state.cart,
+          [itm[0]]:{
+            ...state.cart[itm[0]],
+            checked:itm[1]
+          }}
     }
 
   },

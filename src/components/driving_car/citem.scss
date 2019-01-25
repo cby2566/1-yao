@@ -8,9 +8,22 @@
     position:relative;
     overflow:hidden;
     :nth-child(1){
+        .imgxx{
+            background:url(../../assets/img/citem1.png) no-repeat;
+            background-size: 100%;
+            height: sss($n : 25);
+            width:sss($n : 25);
+        }
+        .imgxy{
+            background:url(../../assets/img/citem2.png) no-repeat;
+            background-size: 100%;
+            height: sss($n : 25);
+            width:sss($n : 25);
+        }
         img{
             height: sss($n : 25);
             width:sss($n : 25);
+            
         }
     }
     :nth-child(2){
