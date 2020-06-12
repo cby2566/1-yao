@@ -22,7 +22,7 @@ const routes=[
     //       name:'Goodlist',
     //       component:Goodlist,
     //       meta:{
-    //           requireAuth:true
+    //           requireAuth:true 路由拦截
     //       }
     //     },
     //   ]

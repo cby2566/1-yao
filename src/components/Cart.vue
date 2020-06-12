@@ -31,18 +31,53 @@ import citem from './driving_car/cart_item.vue';
 import vue from 'Vue'
 export default {
     data(){
-        return {citems:5,xyz:false,yimg:require('../assets/img/citem1.png'),no_img:require('../assets/img/citem2.png'),imgx:false,shanchu:'shanchu',isDelete:true,
-        //itemObject:this.$store.state.itemTo.cart,
-        obj:{xx:123,ss:999}}
+        return {
+            citems: 5,
+            xyz: false,
+            yimg: require('../assets/img/citem1.png'),
+            no_img: require('../assets/img/citem2.png'),
+            imgx: false,
+            shanchu: 'shanchu',
+            isDelete: true,
+            //itemObject:this.$store.state.itemTo.cart,
+            obj: {xx: 123, ss: 999},
+            itemObject: 
+            {
+                '456': 
+                {
+                    checked: false,
+                    goodsImages: "http://img.zdfei.com/static/image/goods//201909/758b997ea190aa1dcabebd18e0ba2d58.jpg",
+                    goods_name: "史克肠虫清 阿苯达唑片 10片",
+                    main_title: "用于治疗钩虫、蛔虫、鞭虫、蛲虫、施毛虫等线虫病外，还可用于治疗囊虫和包虫病",
+                    manu_name: "中美天津史克制药有限公司",
+                    price: "14.50",
+                    sid: "654",
+                    spec: "0.2g*10片",
+                    sum: 2,
+                },
+                '5957':{
+                    checked: false,
+                    goodsImages: "http://img.zdfei.com/static/image/goods//201711/3c095405e3ec9c85408d5a3ce171984e.jpg",
+                    goods_name: "白云山 小儿奇应丸 0.5g*1瓶/盒",
+                    main_title: "解热定惊 ，化痰止咳 ，消食杀虫。用于小儿惊风发热，咳嗽多痰，食积，虫积。",
+                    manu_name: "广州敬修堂医药股份公司",
+                    price: "4.50",
+                    sid: "5957",
+                    spec: "0.5g",
+                    sum: 1,
+                }
+            }
+            
+            }
     },
     created(){
         //this.$store.commit('buga','ds');
         //this.$store.dispatch('minusPriceAsync','dsd');
     },
     computed:{
-        itemObject(){
-            return this.$store.state.itemTo.cart;
-        },
+        // itemObject(){
+        //     return this.$store.state.itemTo.cart;
+        // },
         sum(){    
             for(let i in this.$store.state.itemTo.cart){
                 console.log(this.$store.state.itemTo.cart[i].checked)
@@ -56,6 +91,13 @@ export default {
             else{
                 return this.yimg;
             }
+        },
+        checked_all(){
+            let all = []
+            for(let i in this.itemObject){
+                all.push(this.itemObject[i].checked) 
+            }
+            return all.every(item => item)
         }
     },
     components:{
@@ -64,6 +106,9 @@ export default {
     watch:{
         itemObject(){
             console.log("delete");   
+        },
+        checked_all(flag){
+            this.imgx = flag;
         }
     },
     methods:{
@@ -75,12 +120,14 @@ export default {
         },
         quanx(){
             this.imgx=!this.imgx;
-            for(let i in this.$store.state.itemTo.cart){
-                //vue.set(this.$store.state.itemTo.cart[i],'checked',this.imgx);
-                this.$store.commit('updataObj',[i,this.imgx]);
+            // for(let i in this.$store.state.itemTo.cart){
+            //     //vue.set(this.$store.state.itemTo.cart[i],'checked',this.imgx);
+            //     this.$store.commit('updataObj',[i,this.imgx]);
+            // }
+            // console.log(this.$store.state.itemTo.cart);
+            for(let i in this.itemObject){
+                this.itemObject[i].checked = this.imgx;
             }
-            console.log(this.$store.state.itemTo.cart);
-                 
         },
         bian(){
             //vue.delete(this.obj, 'xx')

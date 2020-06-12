@@ -1,6 +1,6 @@
 <template>
     <div class="citem" @click="buy()">
-        <div><img :src="img"/></div>
+        <div><img :src="img_activ"/></div>
         <div><img :src="itmObj.goodsImages"/></div>
         <div>
             <p>{{itmObj.goods_name}}</p>
@@ -17,19 +17,24 @@ import {Toast} from 'mint-ui';
 import vue from 'Vue';
 export default {
     data(){
-        return {num:200,yimg:require('../../assets/img/citem1.png'),no_img:require('../../assets/img/citem2.png'),imgx:false}
+        return {
+            num: 200,
+            no_img: require('../../assets/img/citem1.png'),
+            yimg: require('../../assets/img/citem2.png'),
+            // img_activ: false
+            }
         },
     props:['xyz','itmObj','sca'],
     components:{
             jia_jian
         },
     computed:{
-        img(){
+        img_activ(){
             if(this.itmObj.checked){     
-                return this.no_img;
+                return this.yimg;
             }
             else{   
-                return this.yimg;
+                return this.no_img;
             }
         },
         ko:{
@@ -60,9 +65,10 @@ export default {
             this.itmObj.sum=tou;
         },
         buy(){
-            this.$emit('up_img',[this.itmObj.sid,this.itmObj.checked]);
+            // this.$emit('up_img',[this.itmObj.sid,this.itmObj.checked]);
             
-            this.imgx=!this.imgx;
+            this.itmObj.checked =! this.itmObj.checked
+            
 
                  
             //this.$store.commit('updataObj',[this.itmObj.sid,this.imgx]);
@@ -98,6 +104,8 @@ export default {
     },
     created(){   
         this.$store.state.home.showNav = true;
+        // this.img_activ = this.itmObj.checked
+
         //console.log(this.$store.state.home.cart)
         //console.log('ok',this.$store.state.goodlist.lists);
     },
