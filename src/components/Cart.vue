@@ -18,7 +18,7 @@
                 <span>全选</span>
             </div>
             <div>
-                <span>总计：<a>￥0.00</a></span>
+                <span>总计：<a>￥{{total_price}}</a></span>
                 <span>不含运费，已优惠-￥0</span>
             </div>
             <div>结算（{{sum}}）</div>
@@ -98,6 +98,14 @@ export default {
                 all.push(this.itemObject[i].checked) 
             }
             return all.every(item => item)
+        },
+        total_price(){
+            let sum = 0
+            for(let i in this.itemObject){
+                let x = this.itemObject[i].checked ? Number.parseFloat(this.itemObject[i].price) : 0;
+                sum += x*this.itemObject[i].sum
+            }
+            return sum.toFixed(2)
         }
     },
     components:{
